@@ -12,6 +12,7 @@
 		00C261901F183BDD005D98EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00C2618E1F183BDD005D98EF /* Main.storyboard */; };
 		00C261921F183BDD005D98EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00C261911F183BDD005D98EF /* Assets.xcassets */; };
 		00C261951F183BDD005D98EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00C261931F183BDD005D98EF /* LaunchScreen.storyboard */; };
+		00C2619D1F184702005D98EF /* ProduitCroise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2619C1F184702005D98EF /* ProduitCroise.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		00C261911F183BDD005D98EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00C261941F183BDD005D98EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00C261961F183BDD005D98EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00C2619C1F184702005D98EF /* ProduitCroise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProduitCroise.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				00C2618A1F183BDD005D98EF /* AppDelegate.swift */,
 				00C2618C1F183BDD005D98EF /* ViewController.swift */,
 				00C2618E1F183BDD005D98EF /* Main.storyboard */,
+				00C2619C1F184702005D98EF /* ProduitCroise.swift */,
 				00C261911F183BDD005D98EF /* Assets.xcassets */,
 				00C261931F183BDD005D98EF /* LaunchScreen.storyboard */,
 				00C261961F183BDD005D98EF /* Info.plist */,
@@ -137,6 +140,7 @@
 			files = (
 				00C2618D1F183BDD005D98EF /* ViewController.swift in Sources */,
 				00C2618B1F183BDD005D98EF /* AppDelegate.swift in Sources */,
+				00C2619D1F184702005D98EF /* ProduitCroise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
