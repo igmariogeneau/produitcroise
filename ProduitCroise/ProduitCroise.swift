@@ -6,9 +6,23 @@ class ProduitCroise {
     var lesNotes: [String : [Double]] = [:]
     var keys: [String] = []
     var values: [Double] = []
+    var userDefaults = UserDefaults.standard
     //------------------------------------------
     init() {
+        manageUserDefaults()
         parseDict()
+    }
+    //------------------------------------------
+    func manageUserDefaults() {
+        if let savedData = userDefaults.object(forKey: "data") {
+            lesNotes = savedData as! [String : [Double]]
+        } else {
+            userDefaults.set(lesNotes, forKey: "data")
+        }
+    }
+    //------------------------------------------
+    func saveUserDefaults() {
+        userDefaults.set(lesNotes, forKey: "data")
     }
     //------------------------------------------
     func changerNotes(lesNotes: [Double],
@@ -32,6 +46,7 @@ class ProduitCroise {
     //------------------------------------------
     func ajouterUneNote(nom: String, note: Double, sur: Double) {
         lesNotes[nom] = [note, sur]
+        saveUserDefaults()
     }
     //------------------------------------------
     func parseDict() {

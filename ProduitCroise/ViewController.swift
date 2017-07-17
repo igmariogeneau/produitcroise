@@ -8,6 +8,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var sur_textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var convertir_textField: UITextField!
+    @IBOutlet weak var scrollview: UIScrollView!
     //------------------------------------------
     let obj = ProduitCroise()
     //------------------------------------------
@@ -19,6 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         obj.ajouterUneNote(nom: nom_textField.text!,
                            note: Double(note_textField.text!)!,
                            sur: Double(sur_textField.text!)!)
+        
         obj.parseDict()
         tableView.reloadData()
         resetFields()
@@ -73,6 +75,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             obj.lesNotes[obj.keys[indexPath.row]] = nil
+            obj.saveUserDefaults()
             obj.parseDict()
             tableView.deleteRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.automatic)
         }
@@ -81,6 +84,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    //------------------------------------------
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.tag == 10 {
+            let theOffset = 900 - UIScreen.main.bounds.size.height
+            scrollview.setContentOffset(CGPoint(x: 0, y: theOffset), animated: true)
+        } else {
+            scrollview.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+        }
     }
     //------------------------------------------
 }
